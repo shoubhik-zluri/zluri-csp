@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Integration Settings | Zluri CSP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#410005",
+                        "secondary-fixed-dim": "#75de57",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#ebe7e7",
+                        "on-background": "#1c1b1b",
+                        "secondary-fixed": "#90fb70",
+                        "on-primary-container": "#f7f6ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#003baf",
+                        "outline": "#737687",
+                        "on-secondary-fixed": "#032100",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-container": "#f0edec",
+                        "surface-bright": "#fcf9f8",
+                        "on-tertiary-fixed-variant": "#930016",
+                        "on-error": "#ffffff",
+                        "primary": "#004bd8",
+                        "primary-container": "#2f65f6",
+                        "background": "#fcf9f8",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container": "#f0edec",
+                        "surface-bright": "#fcf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "tertiary": "#af1a25",
+                        "surface-variant": "#e5e2e1",
+                        "secondary": "#176e00",
+                        "outline-variant": "#c3c5d8",
+                        "inverse-surface": "#313030",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00164e",
+                        "secondary-container": "#8df86d",
+                        "primary-fixed": "#dce1ff",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-surface-variant": "#434655",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3af",
+                        "on-tertiary-container": "#fff5f4",
+                        "surface-tint": "#0650e2",
+                        "tertiary-container": "#d2363a",
+                        "on-surface": "#1c1b1b",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-secondary-fixed-variant": "#0f5300",
+                        "on-secondary-container": "#197200"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .status-glow {
+            box-shadow: 0 0 8px currentColor;
+        }
+        body {
+            background-color: #fcf9f8;
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-slate-900 flex flex-col py-6 shadow-2xl z-50 font-inter antialiased text-sm tracking-tight">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-bold text-white tracking-tighter">Zluri CSP</h1>
+<p class="text-slate-400 text-xs">Internal Tool</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 mx-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 mx-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">supervisor_account</span>
+                Accounts
+            </a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 mx-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">assignment</span>
+                Projects
+            </a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 mx-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">mail</span>
+                Email Templates
+            </a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 mx-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+                Admin
+            </a>
+</nav>
+<div class="mt-auto border-t border-slate-800/50 pt-4">
+<a class="bg-blue-600 text-white rounded-lg mx-2 my-1 flex items-center px-4 py-3 shadow-lg shadow-blue-500/20 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mr-3">settings_input_component</span>
+                Support
+            </a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-16 z-40 bg-white/80 backdrop-blur-md shadow-sm flex items-center justify-between px-8 border-b border-slate-100 font-inter text-sm font-medium">
+<div class="flex items-center space-x-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-highest border-none rounded-lg focus:ring-1 focus:ring-primary/30 text-sm transition-all" placeholder="Search accounts or integrations..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<button class="text-slate-500 hover:text-slate-900 transition-all hover:bg-slate-50 rounded-full p-2 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<div class="flex items-center space-x-3 border-l border-slate-100 pl-6">
+<span class="text-blue-600 font-semibold border-b-2 border-blue-600 py-5">Integration Settings</span>
+<img alt="User Avatar" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/10" data-alt="professional headshot of a customer success manager with a friendly expression in a modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB99361lYdc3q6N-2eagCEv_NzZkjNSRFIKtsQcnhcWzWWNr9Cb2EelEvcKLWrSq6tixZCoEY8QlUD7bzHvi7FpnKco0lFb6dQen9AbowglhDzg3_cuZFF1NTSeWTmfaZY4xsyIU8YRLrb7rVbMngAdCa1qLJmFLz58UZn0OBlaKdq6cVpn4V2aKmussPQ2JzsReX4-kNTv3dARDy2M1YoCtT1ln8KWPdzEWq3HtIJJ9nMarOO0Hh35t2X0bfcRXOSyv1_EHdNqOfM"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-16 min-h-screen">
+<!-- Entity Header / Breadcrumb -->
+<section class="px-10 py-8 glass-header">
+<div class="flex items-center space-x-2 text-on-surface-variant text-xs mb-4 uppercase tracking-widest font-semibold">
+<span>Personal Settings</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary">Integrations</span>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">Integration Settings</h2>
+<p class="text-on-surface-variant max-w-2xl leading-relaxed">
+                        Manage your individual connections to external services. These integrations power automated workflows and data synchronization for your assigned accounts.
+                    </p>
+</div>
+<div class="flex space-x-12 pb-2">
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-1">Active Syncs</p>
+<p class="text-2xl font-bold text-primary">02</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-1">Health Status</p>
+<div class="flex items-center justify-end space-x-2">
+<span class="w-2 h-2 rounded-full bg-secondary status-glow"></span>
+<p class="text-2xl font-bold text-secondary">Optimal</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="px-10 space-y-8 pb-12">
+<!-- Global Status Banner -->
+<div class="bg-primary-fixed/30 rounded-xl p-4 flex items-center justify-between border border-primary/10">
+<div class="flex items-center space-x-4">
+<div class="bg-primary-container p-2 rounded-lg text-on-primary-container">
+<span class="material-symbols-outlined">sync</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-primary-fixed">Active Sync Jobs</p>
+<p class="text-xs text-on-primary-fixed-variant">All connections are operational. 124 records synchronized in the last 24 hours.</p>
+</div>
+</div>
+<button class="text-xs font-bold text-primary px-4 py-2 hover:bg-primary/5 rounded-lg transition-colors">
+                    View Logs
+                </button>
+</div>
+<!-- Integrations Bento-style Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Granola Card (Connected) -->
+<div class="col-span-12 lg:col-span-7 bg-surface-container-lowest rounded-xl p-8 shadow-sm transition-all hover:shadow-md">
+<div class="flex items-start justify-between mb-8">
+<div class="flex items-center space-x-4">
+<div class="w-16 h-16 bg-[#F4EBE3] rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-[#C88B5B] text-4xl">inventory_2</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-on-surface">Granola</h3>
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-xs font-medium text-secondary">Connected</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Last Synced</p>
+<p class="text-sm font-medium">Today, 10:42 AM</p>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-10 leading-relaxed">
+                        Granola is currently syncing meeting notes and action items directly into the Customer Success timeline. This integration ensures that no critical client feedback is missed during high-frequency review cycles.
+                    </p>
+<div class="flex items-center justify-between pt-6 border-t border-surface-container">
+<div class="flex items-center space-x-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-lg shadow-primary/20 flex items-center space-x-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">sync</span>
+<span>Sync Now</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface text-sm font-bold px-4 py-2.5 transition-colors">
+                                Edit Scope
+                            </button>
+</div>
+<button class="text-error font-bold text-sm px-4 py-2.5 hover:bg-error/5 rounded-lg transition-colors flex items-center space-x-2">
+<span class="material-symbols-outlined text-sm">link_off</span>
+<span>Disconnect</span>
+</button>
+</div>
+</div>
+<!-- Gmail Card (Disconnected State UI) -->
+<div class="col-span-12 lg:col-span-5 bg-surface-container-low rounded-xl p-8 border border-transparent hover:border-outline-variant/30 transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center space-x-4 mb-6">
+<div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center">
+<img alt="Gmail Icon" class="w-6 h-6 object-contain" data-alt="Clean minimalist Gmail logo icon floating on a soft white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBM3XC84XvXCQkNDgCGAnyF8zbKfdwjikEjGS3x1g0p5g-aP2rA3YxQISYAQBrTlImpDRVQvGRYOhp35Z-913I-H-ZPiClC4lkxtriw3cBsh1Z6GlsRMCV1qrQyMHpBHOIdfTs3Vx39YrHDrSO7TjGMtGqrWL8uXlzcW7Cdv2bV_m9T8Vksh3HUnkv-YVfbPnzr8mCka29tMsHN18iZxJHW4IyByk2a7-Wx517hyEf5mT-3IzY3XriIkSRtg2nrSi5n35D0cwwi_U"/>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Gmail</h3>
+<p class="text-xs text-on-surface-variant">Correspondence Tracking</p>
+</div>
+</div>
+<div class="bg-surface-container-highest/50 p-4 rounded-lg mb-6">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">Scope Disclosure</p>
+<ul class="space-y-2">
+<li class="flex items-start space-x-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary mt-0.5">check_circle</span>
+<span>Read-only access to email headers</span>
+</li>
+<li class="flex items-start space-x-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary mt-0.5">check_circle</span>
+<span>Sync sent items to Account Timeline</span>
+</li>
+<li class="flex items-start space-x-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-error mt-0.5">cancel</span>
+<span>No access to private drafts or personal folders</span>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<button class="w-full bg-white border border-outline-variant/30 text-on-surface font-bold py-3 rounded-lg flex items-center justify-center space-x-3 hover:bg-surface-container-lowest transition-all active:scale-[0.98]">
+<img alt="Google Logo" class="w-5 h-5" data-alt="Google colorful logo icon on white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlEXERFCLvT-LuzNKZWcvd-RETDF5Kv7Jv8lYXNH88GnNf-Fi8OpRmZo5flvhDT-4VWx2tVFqoK6wZpD2j7hbQPAE-1EZw29vqnumtTj_A2bVe1w9-E8l05IxlTs9XAysZOrrFnsrpnsocM9NyvO0bgHtnSsTwSqToG-5p1Tewfx7pl1IPRusKM596fxYvP4GzNIyzcLC9nNTEelqve7pEqji2Z6LI1G8OahvNbysS3qBnM9ec9RXUz7o776BFqPXd1kYkqb1CzEQ"/>
+<span>Connect with Google</span>
+</button>
+<p class="text-[10px] text-center mt-4 text-on-surface-variant">
+                            By connecting, you agree to our <a class="underline" href="#">Integration Privacy Policy</a>.
+                        </p>
+</div>
+</div>
+<!-- Secondary Detail Cards -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm">
+<div class="flex items-center space-x-3 mb-4">
+<span class="material-symbols-outlined text-primary">security</span>
+<h4 class="font-bold text-on-surface">Security Audit</h4>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-6">
+                        All CSM integrations are periodically audited for compliance. Last audit passed on Oct 12, 2023.
+                    </p>
+<div class="bg-surface-container rounded p-3 flex items-center justify-between">
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Token Health</span>
+<span class="text-xs font-bold text-secondary">Valid (24d left)</span>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl p-6 shadow-sm flex items-center justify-between">
+<div class="max-w-md">
+<h4 class="font-bold text-on-surface mb-1">Webhooks &amp; API Usage</h4>
+<p class="text-xs text-on-surface-variant">Monitor the volume of requests being made by your personal integrations to ensure rate limits are not exceeded.</p>
+</div>
+<div class="flex items-end space-x-1 h-12">
+<div class="w-3 bg-primary/20 h-[40%] rounded-t-sm"></div>
+<div class="w-3 bg-primary/20 h-[60%] rounded-t-sm"></div>
+<div class="w-3 bg-primary/40 h-[30%] rounded-t-sm"></div>
+<div class="w-3 bg-primary/20 h-[80%] rounded-t-sm"></div>
+<div class="w-3 bg-primary h-[100%] rounded-t-sm"></div>
+<div class="w-3 bg-primary/60 h-[50%] rounded-t-sm"></div>
+<div class="w-3 bg-primary/30 h-[70%] rounded-t-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Help Button -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-on-background text-white rounded-full flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined">question_answer</span>
+</button>
+</body></html>

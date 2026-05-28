@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects | Zluri CSP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed": "#410005",
+              "secondary-fixed-dim": "#75de57",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#ebe7e7",
+              "on-background": "#1c1b1b",
+              "secondary-fixed": "#90fb70",
+              "on-primary-container": "#f7f6ff",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#003baf",
+              "outline": "#737687",
+              "on-secondary-fixed": "#032100",
+              "inverse-primary": "#b6c4ff",
+              "surface-container": "#f0edec",
+              "surface-bright": "#fcf9f8",
+              "on-tertiary-fixed-variant": "#930016",
+              "on-error": "#ffffff",
+              "primary": "#004bd8",
+              "primary-container": "#2f65f6",
+              "background": "#fcf9f8",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-container": "#f0edec",
+              "surface-bright": "#fcf9f8",
+              "on-tertiary-fixed-variant": "#930016",
+              "on-error": "#ffffff",
+              "primary": "#004bd8",
+              "primary-container": "#2f65f6",
+              "background": "#fcf9f8",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-dim": "#dcd9d9",
+              "tertiary": "#af1a25",
+              "surface-variant": "#e5e2e1",
+              "secondary": "#176e00",
+              "outline-variant": "#c3c5d8",
+              "inverse-surface": "#313030",
+              "surface-container-low": "#f6f3f2",
+              "surface": "#fcf9f8",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#00164e",
+              "secondary-container": "#8df86d",
+              "primary-fixed": "#dce1ff",
+              "surface-container-highest": "#e5e2e1",
+              "on-surface-variant": "#434655",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb3af",
+              "on-tertiary-container": "#fff5f4",
+              "surface-tint": "#0650e2",
+              "tertiary-container": "#d2363a",
+              "on-surface": "#1c1b1b",
+              "tertiary-fixed": "#ffdad7",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-secondary-fixed-variant": "#0f5300",
+              "on-secondary-container": "#197200"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .status-glow-success { box-shadow: 0 0 8px rgba(23, 110, 0, 0.3); }
+        .status-glow-error { box-shadow: 0 0 8px rgba(186, 26, 26, 0.3); }
+        .status-glow-warning { box-shadow: 0 0 8px rgba(175, 26, 37, 0.3); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+<!-- SideNavBar Rail -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-slate-900 dark:bg-black shadow-2xl z-50 flex flex-col py-6 font-inter antialiased text-sm tracking-tight">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-bold text-white tracking-tighter">Zluri CSP</h1>
+<p class="text-[10px] text-slate-400 uppercase tracking-[0.2em] mt-1">Internal Tool</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-all duration-200 hover:bg-slate-800/80" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-all duration-200 hover:bg-slate-800/80" href="#">
+<span class="material-symbols-outlined mr-3">supervisor_account</span>
+                Accounts
+            </a>
+<!-- Active State: Projects -->
+<a class="bg-blue-600 text-white rounded-lg mx-2 my-1 flex items-center px-4 py-3 shadow-lg shadow-blue-500/20 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">assignment</span>
+                Projects
+            </a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-all duration-200 hover:bg-slate-800/80" href="#">
+<span class="material-symbols-outlined mr-3">mail</span>
+                Email Templates
+            </a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-all duration-200 hover:bg-slate-800/80" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+                Admin
+            </a>
+</nav>
+<div class="mt-auto px-2">
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-all duration-200 hover:bg-slate-800/80" href="#">
+<span class="material-symbols-outlined mr-3">help_outline</span>
+                Support
+            </a>
+<div class="mt-4 px-4 flex items-center gap-3 border-t border-slate-800 pt-6">
+<img alt="User Avatar" class="w-8 h-8 rounded-full bg-slate-700" data-alt="Minimalist professional portrait of a tech professional in a corporate setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMMvUcERUxFH48R5M4u0TFJmsqlLurg7CpJvWd3Y2KXSLuXJBYzCKtTZd5h4jkmVxY08KLNBIGqrfjP747nEmFVUoy05lbwkqnmLZu395_wZI3ZbnIduQgqzrokztqkNk82v910p5QKMGQY7YICQ7MOnUYyhh5_mQxAy8YMQZ3s9HJSWXSLuC7rMAVYgthVrHp5OMn3a6rQItftre4E06WfJRRvKpS-BictoOkJ-NMWv4_AiwhS1MWboW9hKffles_NL4rmgEiXB8"/>
+<div class="flex flex-col">
+<span class="text-white text-xs font-semibold">Alex Chen</span>
+<span class="text-slate-500 text-[10px]">CSM Lead</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-16 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm flex items-center justify-between px-8 w-full border-b border-slate-100">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-96 group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="w-full bg-surface-container-highest border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary/30 transition-all" placeholder="Search projects or accounts..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-500 hover:text-slate-900 transition-all duration-300 rounded-full p-2 hover:bg-slate-50">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-slate-500 hover:text-slate-900 transition-all duration-300 rounded-full p-2 hover:bg-slate-50">
+<span class="material-symbols-outlined">settings_input_component</span>
+</button>
+<span class="h-4 w-px bg-slate-200"></span>
+<button class="text-primary font-medium text-sm hover:underline">Integration Settings</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-16 min-h-screen">
+<!-- Entity Header -->
+<section class="glass-header px-10 py-10 flex flex-col gap-6">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">Projects</h2>
+<p class="text-on-surface-variant font-medium">Implementation pipeline across 42 active enterprise accounts.</p>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 shadow-lg shadow-blue-500/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-lg">add</span>
+                    New Project
+                </button>
+</div>
+<!-- Vital Signs -->
+<div class="flex gap-12 mt-4 border-t border-surface-container-high pt-8">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Total Value</p>
+<p class="text-2xl font-bold tracking-tight">$4.2M</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">At Risk</p>
+<p class="text-2xl font-bold tracking-tight text-error">04</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Avg. Progress</p>
+<p class="text-2xl font-bold tracking-tight">68%</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Go-Lives (30d)</p>
+<p class="text-2xl font-bold tracking-tight">12</p>
+</div>
+</div>
+</section>
+<!-- Projects Table Section -->
+<section class="px-10 pb-20">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<!-- Table Filters -->
+<div class="p-6 flex items-center gap-4 border-b border-surface-container">
+<button class="bg-surface-container-high px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                        All Phases
+                    </button>
+<button class="bg-surface-container-high px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">person</span>
+                        All CSMs
+                    </button>
+</div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-[11px] uppercase tracking-widest text-on-surface-variant font-bold">
+<th class="px-8 py-4">Project Name</th>
+<th class="px-4 py-4">Account</th>
+<th class="px-4 py-4">Status</th>
+<th class="px-4 py-4">CSM</th>
+<th class="px-4 py-4">Target Go-Live</th>
+<th class="px-4 py-4">Progress</th>
+<th class="px-8 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-low transition-colors border-b border-surface-container/30">
+<td class="px-8 py-5">
+<div class="font-bold text-on-surface group-hover:text-primary transition-colors">Core Infrastructure Migration</div>
+<div class="text-[11px] text-on-surface-variant mt-1">ID: PRJ-8821</div>
+</td>
+<td class="px-4 py-5 font-medium">Acme Corp</td>
+<td class="px-4 py-5">
+<div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tight status-glow-success">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                    On Track
+                                </div>
+</td>
+<td class="px-4 py-5">
+<div class="flex items-center gap-2">
+<img alt="CSM Avatar" class="w-6 h-6 rounded-full bg-blue-100" data-alt="Modern minimalist avatar icon for a project manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFrCJ9JtVVc2NgUIvNnmTNlS8MymAnC5vms_oHN9E2aWPM3AEfmzRE5_dIK43wAvMErh3eZc1Dj3zuFaWfwv8mXxwOJoWwHeC7kiZ_nEBINieVqE7rfJwtJqXWSsMiGmOOG8V-PIB3kqx4_fLXoHGZjO-UPd0EzFv7LWDwD7jFJRuhq-yaUVH5qyzOAAETQan9hwBOiB0zituDZ61nFa5mRpwSId30FHqxJAq9_pWcljv92FBu96fASY_bFWgUFmhAFk7uhi1kZ20"/>
+<span class="text-sm">Jane Smith</span>
+</div>
+</td>
+<td class="px-4 py-5 text-sm font-medium">Oct 24, 2023</td>
+<td class="px-4 py-5">
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between text-[10px] font-bold text-on-surface-variant uppercase">
+<span>Phase 4/6</span>
+<span>75%</span>
+</div>
+<div class="w-32 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 75%"></div>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-container-low transition-colors border-b border-surface-container/30">
+<td class="px-8 py-5">
+<div class="font-bold text-on-surface group-hover:text-primary transition-colors">SSO Global Rollout</div>
+<div class="text-[11px] text-on-surface-variant mt-1">ID: PRJ-9012</div>
+</td>
+<td class="px-4 py-5 font-medium">Globex Ltd</td>
+<td class="px-4 py-5">
+<div class="inline-flex items-center gap-2 bg-error/10 text-error px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tight status-glow-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                                    At Risk
+                                </div>
+</td>
+<td class="px-4 py-5">
+<div class="flex items-center gap-2">
+<img alt="CSM Avatar" class="w-6 h-6 rounded-full bg-slate-100" data-alt="Modern minimalist avatar icon for a customer success representative" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASKH619AkFLttv4LxAkz_-0OVhdRBgP-JKMmHMSPIPgI0cpxbz-DmvDWQljyQYsM1wbnEO0Ah3DbCdeHlbfA6GreULFziidTmdD4mDmrYSfSVyibN2ZlbNVAPgksoKSuXCX5p9vwFvKDgYj5FpG6hCz3dTc9wJ-Ark9KO4OfGmpT8agZNiAhiGdrhHHU5RNtY5Ld9cJ9Tn1jOKkiQDmKU9HcPn_n-vLjIPjhKjZNPMZd6Hs_qVuHUDJ8fAtM-J_MXVBQREfXcbQzo"/>
+<span class="text-sm">Mark Taylor</span>
+</div>
+</td>
+<td class="px-4 py-5 text-sm font-medium">Sep 15, 2023</td>
+<td class="px-4 py-5">
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between text-[10px] font-bold text-on-surface-variant uppercase">
+<span>Phase 2/5</span>
+<span>40%</span>
+</div>
+<div class="w-32 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-error" style="width: 40%"></div>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-container-low transition-colors border-b border-surface-container/30">
+<td class="px-8 py-5">
+<div class="font-bold text-on-surface group-hover:text-primary transition-colors">Enterprise Data Sync</div>
+<div class="text-[11px] text-on-surface-variant mt-1">ID: PRJ-7723</div>
+</td>
+<td class="px-4 py-5 font-medium">Soylent Corp</td>
+<td class="px-4 py-5">
+<div class="inline-flex items-center gap-2 bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tight status-glow-warning">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                                    Delayed
+                                </div>
+</td>
+<td class="px-4 py-5">
+<div class="flex items-center gap-2">
+<img alt="CSM Avatar" class="w-6 h-6 rounded-full bg-pink-100" data-alt="Modern minimalist avatar icon for a client relations officer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKg0PNsGqQiGYROUQgUgfQecE50D2BI-MFG5WqSgo6AhIE0Vb1SWiCDaAdrCEivmbJQjpQ-ZGBnLxx0vycCHtgf4gRrgNvsxSsQSsLSgQdGRyt5qgLKO18m3gGsGcJD7tYfzNDMV_-B7q9478BmbLI2EPROqzGkgXlBAuXT55iS0nsl4It2UUo9ydx0ODr0tujkARDdLdDsbfGkhwLU7iQbEMiwSSa3T8WSH_WST1VGbNhUfiOk6Ko5JW5NpUEHYLWV45r7QteLBQ"/>
+<span class="text-sm">Anna Lee</span>
+</div>
+</td>
+<td class="px-4 py-5 text-sm font-medium">Nov 02, 2023</td>
+<td class="px-4 py-5">
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between text-[10px] font-bold text-on-surface-variant uppercase">
+<span>Phase 1/4</span>
+<span>25%</span>
+</div>
+<div class="w-32 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary" style="width: 25%"></div>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-surface-container-low transition-colors border-b border-surface-container/30">
+<td class="px-8 py-5">
+<div class="font-bold text-on-surface group-hover:text-primary transition-colors">Security Audit Automations</div>
+<div class="text-[11px] text-on-surface-variant mt-1">ID: PRJ-1044</div>
+</td>
+<td class="px-4 py-5 font-medium">Initech</td>
+<td class="px-4 py-5">
+<div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tight status-glow-success">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                    On Track
+                                </div>
+</td>
+<td class="px-4 py-5">
+<div class="flex items-center gap-2">
+<img alt="CSM Avatar" class="w-6 h-6 rounded-full bg-blue-100" data-alt="Modern minimalist avatar icon for a professional team lead" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3AFVx2dlKWJAN16Tm0nSrmtZGrdK_bEJSUQu09F18BWN4lsH17xR5W0zATQrmdoOhaKxgFVDbJzJZe0cJ-LVV7ICeq7BLcM_OCL6e5vYlOwHT9iKFFWMdU78qPAfeq04LIpZMkHgaVpb5XoeiBfr-OgR_1gFk3jBmjqshgMpA2_G6uZMhdVuv4X6QDZkonelZC6qvkybNbh9MplkLpu8yFB8Ayspwcjczn6Qy79bAP7FNUpuTKgnFYFNOPED2Yeoh5pfSAwp9PXk"/>
+<span class="text-sm">Jane Smith</span>
+</div>
+</td>
+<td class="px-4 py-5 text-sm font-medium">Dec 12, 2023</td>
+<td class="px-4 py-5">
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between text-[10px] font-bold text-on-surface-variant uppercase">
+<span>Phase 5/5</span>
+<span>100%</span>
+</div>
+<div class="w-32 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 100%"></div>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="px-8 py-6 flex items-center justify-between border-t border-surface-container text-sm">
+<span class="text-on-surface-variant font-medium">Showing <span class="text-on-surface">1-4</span> of <span class="text-on-surface">42</span> projects</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors font-medium">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors font-medium">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Insights (Secondary Layer) -->
+<section class="px-10 pb-20 grid grid-cols-12 gap-6">
+<div class="col-span-8 bg-surface-container-low p-8 rounded-xl flex flex-col justify-between">
+<div>
+<h3 class="text-xl font-bold mb-2">Phase Distribution</h3>
+<p class="text-sm text-on-surface-variant mb-8">Active projects across implementation stages.</p>
+</div>
+<div class="flex items-end justify-between h-40 gap-4">
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-primary/20 rounded-t-lg transition-all group-hover:bg-primary/40" style="height: 30%"></div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">Discovery</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-primary/20 rounded-t-lg transition-all group-hover:bg-primary/40" style="height: 55%"></div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">Onboarding</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-primary rounded-t-lg" style="height: 90%"></div>
+<span class="text-[10px] uppercase font-bold text-on-surface">Configuration</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-primary/20 rounded-t-lg transition-all group-hover:bg-primary/40" style="height: 45%"></div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">UAT</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-primary/20 rounded-t-lg transition-all group-hover:bg-primary/40" style="height: 20%"></div>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">Go-Live</span>
+</div>
+</div>
+</div>
+<div class="col-span-4 bg-primary text-white p-8 rounded-xl relative overflow-hidden flex flex-col justify-between">
+<div class="z-10">
+<h3 class="text-xl font-bold mb-2">Recent Success</h3>
+<p class="text-primary-fixed text-sm">3 enterprise projects completed ahead of schedule this week.</p>
+</div>
+<div class="z-10 mt-8">
+<div class="flex -space-x-3 mb-4">
+<img alt="Company Logo" class="w-10 h-10 rounded-full border-2 border-primary" data-alt="Abstract minimalist company logo in white and blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_BJUMytbfKQtBcrTLurqMTnm8OMgc9yk51UFRTpiEP6KF3KVRWClR26wyfsHr0PSKT6RJoUh3ptggowgVKwA8mJBYJM-8ZrrBlbSXiAeGByTMKgmwKmV1OXoua_790TV7YQCDU6aikOoAeJ64mql-Q7nOSKCZt7GQSNPV6WeyBreK7xa2iCSLKCeYdplGcis4w98ClKvr7wJuqVhQRix3VKwA_F6xl9_6wmNcCYtpJ9we9Q-Ptg4Tg8z7F-zrwLLys0I2cYqlXjU"/>
+<img alt="Company Logo" class="w-10 h-10 rounded-full border-2 border-primary" data-alt="Abstract minimalist cloud computing company logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCssQXblfyyf8qdORSgmMoqL6wiCQqaFMBtJk8yiM5F5PiNB3_O9bCOjLKB_0n2TZ-IaZLmAUMKhQL71v-WGVvISFo3deBEj0K_blgGL6VXfcBOAmUiOK8WBpL4ZPuzXuaBnGbMKIm5j--nXDsQsrw0G-8DbtKDfn4jOPp_lno0n76FWR2QFUsdZZjgeBgTp2y9wOzfNdhyW4TpSlusWrKaytZ-HClg7v2vYDEtPfQZvLD1SqWa3QlTIYQCLXmS-KmBupw06ENaukY"/>
+<img alt="Company Logo" class="w-10 h-10 rounded-full border-2 border-primary" data-alt="Abstract minimalist energy company logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3hXI3JYvFRhxRYVPAK-y5YlF7mI1agu48LhVTlViSdPNDyzrLZoCfzLOyV8YW8wswKXh3Hd-PKTWaOni8ICF-hu7M9ScJBcHOJfD7cUb3foNkLrrbnUxop8zrlD99otsUE1cyqScf9QZx4MW6fMPADfD41pmh34nEBkjmpGbp_vOmUF7B3V6OMktyGW9KM4P_H16CVqTSMs85pp3lWvUrdFoSf2jx-5SODma9Yt8IWu2bNlbe9vMkzkA622NDmKDddREL4-r7DeI"/>
+</div>
+<button class="text-sm font-bold flex items-center gap-2 group">
+                        View Completion Report
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+<!-- Abstract Texture -->
+<div class="absolute -right-10 -bottom-10 opacity-20">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB (Suppressed on list view as per rule, but if needed for global context) -->
+<!-- Hidden to prioritize content canvas -->
+</body></html>

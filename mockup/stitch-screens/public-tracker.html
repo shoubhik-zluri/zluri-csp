@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Tracker | Zluri CSP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed": "#410005",
+              "secondary-fixed-dim": "#75de57",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#ebe7e7",
+              "on-background": "#1c1b1b",
+              "secondary-fixed": "#90fb70",
+              "on-primary-container": "#f7f6ff",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#003baf",
+              "outline": "#737687",
+              "on-secondary-fixed": "#032100",
+              "inverse-primary": "#b6c4ff",
+              "surface-container": "#f0edec",
+              "surface-bright": "#fcf9f8",
+              "on-tertiary-fixed-variant": "#930016",
+              "on-error": "#ffffff",
+              "primary": "#004bd8",
+              "primary-container": "#2f65f6",
+              "background": "#fcf9f8",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-container": "#f0edec",
+              "surface-dim": "#dcd9d9",
+              "tertiary": "#af1a25",
+              "surface-variant": "#e5e2e1",
+              "secondary": "#176e00",
+              "outline-variant": "#c3c5d8",
+              "inverse-surface": "#313030",
+              "surface-container-low": "#f6f3f2",
+              "surface": "#fcf9f8",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#00164e",
+              "secondary-container": "#8df86d",
+              "primary-fixed": "#dce1ff",
+              "surface-container-highest": "#e5e2e1",
+              "on-surface-variant": "#434655",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb3af",
+              "on-tertiary-container": "#fff5f4",
+              "surface-tint": "#0650e2",
+              "tertiary-container": "#d2363a",
+              "on-surface": "#1c1b1b",
+              "tertiary-fixed": "#ffdad7",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-secondary-fixed-variant": "#0f5300",
+              "on-secondary-container": "#197200"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .bg-primary-gradient {
+            background: linear-gradient(135deg, #004bd8 0%, #2f65f6 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Top Navigation (Simplified for Public View) -->
+<nav class="fixed top-0 left-0 right-0 h-16 z-50 bg-white/80 backdrop-blur-md shadow-sm flex items-center justify-between px-8">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary-gradient rounded flex items-center justify-center text-white font-bold text-lg">Z</div>
+<span class="font-headline font-extrabold text-xl tracking-tighter text-on-surface">Zluri CSP</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant text-sm font-medium">Customer Support</span>
+<div class="w-px h-4 bg-surface-container-highest"></div>
+<button class="bg-surface-container-high hover:bg-surface-container-highest px-4 py-2 rounded-lg text-sm font-semibold transition-all">
+                Help Center
+            </button>
+</div>
+</nav>
+<main class="pt-24 pb-20 px-6 max-w-6xl mx-auto">
+<!-- Entity Header (Glass Header Mandate) -->
+<header class="glass-header rounded-xl p-8 mb-10 border-outline-variant/10 shadow-sm">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="text-primary font-label text-xs font-bold tracking-widest uppercase">Project Overview</span>
+<div class="h-1 w-1 rounded-full bg-outline-variant"></div>
+<span class="text-on-surface-variant text-xs font-medium uppercase tracking-wider">Project ID: CSP-9921</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-on-surface">Enterprise SaaS Migration</h1>
+<p class="mt-4 text-on-surface-variant max-w-2xl text-lg leading-relaxed">
+                        Transitioning core identity infrastructure to decentralized authentication modules for the Global Engineering team.
+                    </p>
+</div>
+<div class="flex flex-col items-start md:items-end gap-3">
+<div class="flex items-center gap-2 bg-secondary-container/30 px-4 py-2 rounded-full border border-secondary/10">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(23,110,0,0.4)]"></span>
+<span class="text-secondary font-bold text-sm tracking-tight">On Track</span>
+</div>
+<div class="text-on-surface-variant text-sm font-medium">
+                        Last updated: <span class="text-on-surface">Oct 24, 2023 • 14:22 GMT</span>
+</div>
+</div>
+</div>
+<!-- Vital Signs -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10 pt-8 border-t border-surface-container-highest/50">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-widest mb-1">Completion</span>
+<span class="text-3xl font-headline font-bold text-on-surface">68%</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-widest mb-1">Total Milestones</span>
+<span class="text-3xl font-headline font-bold text-on-surface">12</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-widest mb-1">Active Sprints</span>
+<span class="text-3xl font-headline font-bold text-on-surface">2</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-widest mb-1">Target End Date</span>
+<span class="text-3xl font-headline font-bold text-on-surface">Dec 15</span>
+</div>
+</div>
+</header>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+<!-- Phase Timeline (Asymmetric Layout) -->
+<section class="lg:col-span-8">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-headline font-bold tracking-tight">Project Timeline</h2>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span class="text-xs font-medium uppercase tracking-wider">Client Visible Items Only</span>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Timeline Item: Completed -->
+<div class="relative pl-10 pb-8 group">
+<div class="absolute left-4 top-0 bottom-0 w-px bg-surface-container-highest group-last:bg-transparent"></div>
+<div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-outline-variant/20 transition-all">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-on-surface">Phase 1: Environment Discovery</h3>
+<span class="text-xs font-bold text-secondary uppercase bg-secondary-container/20 px-2 py-1 rounded">Finished</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Complete audit of all legacy identity endpoints and API keys. Successful mapping of dependencies.</p>
+<div class="flex items-center gap-4 text-xs font-medium text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">calendar_today</span> Sep 10 - Sep 25</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item: Active -->
+<div class="relative pl-10 pb-8 group">
+<div class="absolute left-4 top-0 bottom-0 w-px bg-surface-container-highest group-last:bg-transparent"></div>
+<div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-primary-gradient text-white flex items-center justify-center z-10 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-md border border-primary/10 transition-all scale-[1.02]">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-on-surface">Phase 2: Core Migration &amp; Mapping</h3>
+<span class="text-xs font-bold text-primary uppercase bg-primary-fixed/30 px-2 py-1 rounded">In Progress</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Migration of primary user stores. Establishing sync between Zluri CSP and client cloud environment.</p>
+<!-- Milestone Mini-list -->
+<div class="space-y-2 mt-4">
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span class="text-sm font-medium">Database Connector Setup</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg">
+<div class="w-4 h-4 border-2 border-primary/30 rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+</div>
+<span class="text-sm font-bold text-on-surface">Data Normalization Engine Deployment</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-surface-container-low opacity-50 rounded-lg">
+<span class="material-symbols-outlined text-sm">radio_button_unchecked</span>
+<span class="text-sm">Final Sync Validation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline Item: Upcoming -->
+<div class="relative pl-10 pb-8 group">
+<div class="absolute left-4 top-0 bottom-0 w-px bg-surface-container-highest group-last:bg-transparent"></div>
+<div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-base">schedule</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-outline-variant/20 transition-all opacity-80">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-on-surface">Phase 3: UAT &amp; Optimization</h3>
+<span class="text-xs font-bold text-on-surface-variant uppercase bg-surface-container-high px-2 py-1 rounded">Planned</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">User Acceptance Testing with the internal devops team. Fine-tuning latency and caching mechanisms.</p>
+<div class="flex items-center gap-4 text-xs font-medium text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">calendar_today</span> Est. Nov 12 - Dec 01</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item: Upcoming -->
+<div class="relative pl-10 group">
+<div class="absolute left-4 top-0 bottom-0 w-px bg-surface-container-highest group-last:bg-transparent"></div>
+<div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-base">lock</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-outline-variant/20 transition-all opacity-80">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-on-surface">Phase 4: Final Handover</h3>
+<span class="text-xs font-bold text-on-surface-variant uppercase bg-surface-container-high px-2 py-1 rounded">Planned</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sidebar Info (Bento Style) -->
+<aside class="lg:col-span-4 space-y-6">
+<!-- Team Card -->
+<div class="bg-surface-container-low rounded-xl p-6">
+<h4 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6">Your Project Team</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<img alt="Account Lead" class="w-12 h-12 rounded-full object-cover" data-alt="professional middle-aged male customer success manager with friendly expression in office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr7CvUJJzQ-LdJ-wTlrOEgIscb1jqZykCNIswVb6i9drtQdHfFCjN1ruU3s4Zb-CoBoLFWUx7-kS11wwVjyaL0H_7KKSDiTmcuVQlXOXEyRZYz-crUqk5m9FRkqVhpIqfON0Jsqeq9XW7AROv_Sj-YVSrM7bq6wsifkRiIpAciAOrf_hc6Xd_Kd_ucdPB6kktwqKT9LsYGxwgjGG-t5Xx8oXH83th3zUElZgWGou9AnnSvHOLzwpx2X0HbWxY8ESQlRZeoVYjBVPQ"/>
+<div>
+<p class="font-bold text-sm">Marcus Chen</p>
+<p class="text-xs text-on-surface-variant font-medium">Customer Success Manager</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Implementation Lead" class="w-12 h-12 rounded-full object-cover" data-alt="professional female software engineer with confident smile in modern tech office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2o4A-QBOg2cW4MhVfCPK5F1TbMd4PKXyr10m4VhKo0sMRpsGW2ylJgax9w3DPJCNuXzzsf8rR0mDxfsxFfEohJpitB-MVT_5dEJ8v_w7GAjz16lwdM6m98W2y31caX23atRlCajdEaDYpxBG_meRlzZFYlCn0iV2lkY-zs57yqtM-iYEMrUrvyuBKgDZYhsS_ercsXQhwlyjbFOFROK4kxqBfP8L6skQikpn34XWyjk0dgxmucw84HxI9djJI5AOzOQ15r257aGs"/>
+<div>
+<p class="font-bold text-sm">Sarah Jenkins</p>
+<p class="text-xs text-on-surface-variant font-medium">Implementation Engineer</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 bg-surface-container-lowest border border-outline-variant/30 py-3 rounded-lg text-sm font-bold hover:bg-white transition-colors">
+                        Message Project Team
+                    </button>
+</div>
+<!-- Next Major Milestone Bento -->
+<div class="bg-primary-gradient rounded-xl p-6 text-white shadow-xl shadow-primary/10 overflow-hidden relative">
+<div class="relative z-10">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">Next Major Milestone</span>
+<h4 class="text-2xl font-headline font-extrabold mt-1 mb-4 leading-tight">Integration Audit &amp; Final Signoff</h4>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-sm">event</span>
+<span class="text-sm font-medium">November 08, 2023</span>
+</div>
+<div class="w-full bg-white/20 h-1.5 rounded-full overflow-hidden">
+<div class="bg-white h-full w-[45%]"></div>
+</div>
+<p class="text-[11px] mt-2 opacity-80">45% of pre-requisites completed</p>
+</div>
+<!-- Decorative Background Graphic -->
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+</div>
+<!-- Document/Quick Links -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-surface-container">
+<h4 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-4">Project Resources</h4>
+<ul class="space-y-3">
+<li>
+<a class="flex items-center justify-between group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">description</span>
+<span class="text-sm font-medium text-on-surface">Scope of Work</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">open_in_new</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">architecture</span>
+<span class="text-sm font-medium text-on-surface">System Architecture</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">open_in_new</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">verified_user</span>
+<span class="text-sm font-medium text-on-surface">Security Whitepaper</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">open_in_new</span>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<!-- Public Footer -->
+<footer class="bg-surface-container-low border-t border-surface-container mt-12 py-12">
+<div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3 grayscale opacity-70">
+<div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white font-bold text-xs">Z</div>
+<span class="font-headline font-bold text-lg tracking-tighter text-slate-900">Zluri CSP</span>
+</div>
+<div class="flex gap-8 text-on-surface-variant text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Security</a>
+<a class="hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+<p class="text-on-surface-variant/60 text-xs">
+                © 2023 Zluri Inc. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

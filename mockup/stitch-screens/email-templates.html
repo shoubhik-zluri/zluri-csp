@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed": "#410005",
+              "secondary-fixed-dim": "#75de57",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#ebe7e7",
+              "on-background": "#1c1b1b",
+              "secondary-fixed": "#90fb70",
+              "on-primary-container": "#f7f6ff",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#003baf",
+              "outline": "#737687",
+              "on-secondary-fixed": "#032100",
+              "inverse-primary": "#b6c4ff",
+              "surface-container": "#f0edec",
+              "surface-bright": "#fcf9f8",
+              "on-tertiary-fixed-variant": "#930016",
+              "on-error": "#ffffff",
+              "primary": "#004bd8",
+              "primary-container": "#2f65f6",
+              "background": "#fcf9f8",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-container": "#f0edec",
+              "surface-bright": "#fcf9f8",
+              "on-tertiary-fixed-variant": "#930016",
+              "on-error": "#ffffff",
+              "primary": "#004bd8",
+              "primary-container": "#2f65f6",
+              "background": "#fcf9f8",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-dim": "#dcd9d9",
+              "tertiary": "#af1a25",
+              "surface-variant": "#e5e2e1",
+              "secondary": "#176e00",
+              "outline-variant": "#c3c5d8",
+              "inverse-surface": "#313030",
+              "surface-container-low": "#f6f3f2",
+              "surface": "#fcf9f8",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#00164e",
+              "secondary-container": "#8df86d",
+              "primary-fixed": "#dce1ff",
+              "surface-container-highest": "#e5e2e1",
+              "on-surface-variant": "#434655",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb3af",
+              "on-tertiary-container": "#fff5f4",
+              "surface-tint": "#0650e2",
+              "tertiary-container": "#d2363a",
+              "on-surface": "#1c1b1b",
+              "tertiary-fixed": "#ffdad7",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "primary-fixed-dim": "#b6c4ff",
+              "on-secondary-fixed-variant": "#0f5300",
+              "on-secondary-container": "#197200"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .variable-chip {
+            background-color: #dce1ff;
+            color: #003baf;
+            padding: 0px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            border: 1px solid rgba(0, 75, 216, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- SideNavBar (Predicted Rail) -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-slate-900 dark:bg-black shadow-2xl z-50 flex flex-col py-6 font-inter antialiased text-sm tracking-tight">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-bold text-white tracking-tighter">Zluri CSP</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Internal Tool</p>
+</div>
+<nav class="flex-1 px-2 space-y-1">
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="supervisor_account">supervisor_account</span>
+<span>Accounts</span>
+</a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="assignment">assignment</span>
+<span>Projects</span>
+</a>
+<a class="bg-blue-600 text-white rounded-lg flex items-center px-4 py-3 shadow-lg shadow-blue-500/20 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="mail">mail</span>
+<span>Email Templates</span>
+</a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+<span>Admin</span>
+</a>
+</nav>
+<div class="px-2 mt-auto border-t border-slate-800 pt-4">
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="help_outline">help_outline</span>
+<span>Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar (Predicted Shell) -->
+<header class="fixed top-0 right-0 left-64 h-16 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm border-b border-slate-100 flex items-center justify-between px-8 font-inter text-sm font-medium">
+<div class="flex items-center flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="w-full bg-surface-container-highest border-none rounded-full py-2 pl-10 pr-4 focus:ring-1 focus:ring-primary/30 text-sm transition-all duration-300" placeholder="Search templates..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-500 hover:text-slate-900 transition-all duration-300 hover:bg-slate-50 rounded-full p-2">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="flex items-center gap-2 text-primary font-semibold">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+<span>Integration Settings</span>
+</div>
+<div class="h-8 w-8 rounded-full bg-surface-container overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="portrait of a professional customer success manager with a friendly smile wearing business casual attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB4gubV0MQwqqMGOHCwxXaZ6DRMlBQ8hakMvP0UHOKIBvY1Ftxbh6N0O1YIZXYK4lzneMrFdj8OPeyboQ0CIV4cKmj-3HX77DfKfaQ3FKtRU8i1_bLLZFIctWRlvJyFeBOf4LQY8ZdJoJKTfB8uU-BCxkmTW_iO__WeIaJW_MnWv-rFMeyh6RP_lyqeq7FFdF99S2Tt5g2Y4zna5ihE1nTz17VqJByQW9PzLH7B6jRS5SxoAXiJjJofQV00NtX7bq3Q1w83QqYPjI"/>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<div class="pt-24 px-10 pb-12">
+<!-- Entity Header (Signature Component) -->
+<div class="mb-10 flex items-end justify-between">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight headline-md text-on-surface">Email Templates</h2>
+<div class="flex gap-8 mt-4">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Total Assets</span>
+<span class="text-lg font-semibold">124</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Active Sequences</span>
+<span class="text-lg font-semibold">18</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Health Score</span>
+<span class="text-lg font-semibold text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_4px_rgba(23,110,0,0.4)]"></span> 98%
+                            </span>
+</div>
+</div>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-lg shadow-lg shadow-primary/20 font-semibold flex items-center gap-2 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                    Create New Template
+                </button>
+</div>
+<!-- Library Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Sidebar Filters -->
+<div class="col-span-3 space-y-2">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4 px-2">Categories</h3>
+<a class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low font-medium text-primary" href="#">
+<span>All Templates</span>
+<span class="text-xs bg-primary/10 px-2 py-0.5 rounded-full">124</span>
+</a>
+<a class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors text-on-surface-variant" href="#">
+<span>Deal Closure</span>
+<span class="text-xs bg-surface-container-high px-2 py-0.5 rounded-full">12</span>
+</a>
+<a class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors text-on-surface-variant" href="#">
+<span>Exec Intro</span>
+<span class="text-xs bg-surface-container-high px-2 py-0.5 rounded-full">8</span>
+</a>
+<a class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors text-on-surface-variant" href="#">
+<span>Welcome</span>
+<span class="text-xs bg-surface-container-high px-2 py-0.5 rounded-full">24</span>
+</a>
+<a class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors text-on-surface-variant" href="#">
+<span>Renewal</span>
+<span class="text-xs bg-surface-container-high px-2 py-0.5 rounded-full">15</span>
+</a>
+</div>
+<!-- Template Cards -->
+<div class="col-span-9 grid grid-cols-2 gap-6">
+<!-- Card 1 (Active/Selected) -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl border-2 border-primary/20 shadow-xl shadow-primary/5 transition-all cursor-pointer">
+<div class="flex items-start justify-between mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-primary/10 text-primary rounded">Welcome</span>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" data-icon="more_vert">more_vert</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">Welcome Onboarding Sequence</h4>
+<p class="text-xs text-on-surface-variant line-clamp-2 mb-6">"Hi <span class="variable-chip">First_Name</span>, welcome to the platform! We're excited to help you optimize..."</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-container-low">
+<span class="text-[10px] text-on-surface-variant">Edited Oct 12, 2023</span>
+<div class="flex -space-x-2">
+<img alt="Editor" class="w-6 h-6 rounded-full border-2 border-white" data-alt="circular profile icon of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsU9lWYRbeLxC6GYiN85Hs6l60DMsU7FZCgIbABEw6IaOAvv7zsB8OXPKCGmHffUwrKbQRKlo6gu5r8px3DqVvZoQ8rlsw4-a9J6nKcQW56198U3JZhdZGec8a5CwoQ092RP3RXp1uN4C43MURAp9dPD_gR3SDJKz3i209WB1s9Ri5FibpRGO3SYjgJnx35k8AnpISp5irDOCh1U0aIUUFnSAr5p6BeFg0IuTc7xpAly3a3g29W4H8RlCeJVI1gjx1qxeaiCX-3Tc"/>
+<img alt="Editor" class="w-6 h-6 rounded-full border-2 border-white" data-alt="circular profile icon of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0uHwPj7Dv_RxpzUqyYZEHbIfb6_me0MsSGnA2amK60mIfN_qrKD6ER0YWvgLPYzWs4Vu_VIbS7Uymf8PR6cdRNFa8UlilHmPBiLCtQank-G9QPRK9aiQ-xAagx4M3aVdeehLoJTjD6EBQGhLv57KM0GWTc86__7zmco-XxXAfl1whjMOw_cKhLJWIwrKhnyE9lPrFiwCpdBYKxoZTZDzeeRYnI5CDvlWfJ5Zz-McVjwLbYJgO6Mv9RZloUkwBSYg9tVql0RSpTvA"/>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer border border-transparent hover:border-surface-container-high">
+<div class="flex items-start justify-between mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-on-tertiary-container text-tertiary rounded">Deal Closure</span>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" data-icon="more_vert">more_vert</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">Contract Finalization &amp; Signature</h4>
+<p class="text-xs text-on-surface-variant line-clamp-2 mb-6">"Attached is the MSA for <span class="variable-chip">Company_Name</span>. Looking forward to finalizing our partnership..."</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-container-low">
+<span class="text-[10px] text-on-surface-variant">Edited Oct 08, 2023</span>
+<div class="flex -space-x-2">
+<img alt="Editor" class="w-6 h-6 rounded-full border-2 border-white" data-alt="circular profile icon of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOfWiRofLnRJwIrGFq69AY_IQR0qrIWp_MVrTvhmQAxjLNDfriJZBUqnVMsTTG8FW4DmHGE2ckRev9WvqPB5nvvuvbul4Eu6dFcbpYYneazTBW-XAT5zDtmcCIoKfOefs-SuXxXUZAaSDHiF4SoHAFhXenCJjn5Y3_8iHhqY-P3H91l8TCu6bVfOzIIW_bqc4RspGrQI3H7tjPQNwKvwzZegl8cRPJOQLbtAflHQzMVj28qg8hM1O6WxZSRMWhYOKzSgmRvpfNUVU"/>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer border border-transparent hover:border-surface-container-high">
+<div class="flex items-start justify-between mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-surface-container-high text-on-surface-variant rounded">Exec Intro</span>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" data-icon="more_vert">more_vert</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">Executive Alignment Introduction</h4>
+<p class="text-xs text-on-surface-variant line-clamp-2 mb-6">"Connecting <span class="variable-chip">Exec_Name</span> with our VP of Success to discuss strategic roadmap goals for..."</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-container-low">
+<span class="text-[10px] text-on-surface-variant">Edited Sep 29, 2023</span>
+<div class="flex -space-x-2">
+<img alt="Editor" class="w-6 h-6 rounded-full border-2 border-white" data-alt="circular profile icon of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwuUC-pu0zvFn2YlAcWnzr8l1QJPt4KPlw9Xrd-1qvbT2CxvYbDbo2V_Rig0HOeCMHGg4zJ_S7TUrxtTFypY6AlIkzkue550Uo5T-yelnb1L32lnPwvUnJixslLqyKIjsJMo8jnsrWtOqBXG2NMHPvZV_MFdxRubfVrqHGmXYEBpdzH5qnkqgUUfWlMcMnMmTmUAY5VdchvVGpxquIqFoceQDj5ak2CdsvCUm-ZwpTVtew7gUDQ1bvohUIWBfTt5LwDydTXtemZMk"/>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer border border-transparent hover:border-surface-container-high">
+<div class="flex items-start justify-between mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-secondary-container/30 text-secondary rounded">Renewal</span>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" data-icon="more_vert">more_vert</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">90-Day Renewal Check-in</h4>
+<p class="text-xs text-on-surface-variant line-clamp-2 mb-6">"Your current contract expires on <span class="variable-chip">Expiration_Date</span>. Let's schedule a review of your usage..."</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-container-low">
+<span class="text-[10px] text-on-surface-variant">Edited Sep 25, 2023</span>
+<div class="flex -space-x-2">
+<img alt="Editor" class="w-6 h-6 rounded-full border-2 border-white" data-alt="circular profile icon of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwlCKbkUq_bK0gWvOENPpUMWK2GMDbe2wSf3WvF9yd6A2ykjk3MZnYgh7b_4wd7B-I2pAp7DJk916oNyjF_t5zRKtYgBr3IzEOVj0WUuDQJPWp02U6Vll0aFz-L2yvHrNtlBLfaVrUC_asfOaH0zNiu_YHbJ8OUa_LqBz3EmSwN1H9-hN7_EvuBsBsTNi7nO4B8eppNnhSBbeKKl9okGO_UyJk4PgHu1vAs7AUFWzoVs1oO3pxSHERyH1v8Qb23VTywBdOlONttiA"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Template Editor Modal (Overlay View) -->
+<div class="mt-16 bg-surface-container-lowest rounded-2xl shadow-2xl overflow-hidden border border-outline-variant/20 max-w-5xl mx-auto">
+<div class="flex h-[600px]">
+<!-- Editor Side -->
+<div class="flex-1 flex flex-col">
+<div class="p-6 border-b border-surface-container-low bg-surface-container-lowest/80 backdrop-blur flex justify-between items-center">
+<div>
+<h3 class="font-bold text-lg">Edit Template: Welcome Onboarding</h3>
+<p class="text-xs text-on-surface-variant">Category: Welcome • Author: Alex Rivers</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-lg text-xs font-semibold hover:bg-surface-container-low transition-colors">Discard</button>
+<button class="bg-primary text-white px-6 py-2 rounded-lg text-xs font-semibold shadow-md shadow-primary/20">Save Changes</button>
+</div>
+</div>
+<div class="p-8 space-y-4 overflow-y-auto bg-surface-bright">
+<div class="space-y-1">
+<label class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Subject Line</label>
+<div class="w-full bg-white p-3 rounded border border-surface-container-high text-sm font-medium">
+                                    Welcome to Zluri, <span class="variable-chip">First_Name</span>!
+                                </div>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Email Body</label>
+<div class="w-full h-80 bg-white p-6 rounded border border-surface-container-high text-sm leading-relaxed text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-primary/20">
+                                    Hi <span class="variable-chip">First_Name</span>,<br/><br/>
+                                    Welcome to the Zluri ecosystem! We're thrilled to have <span class="variable-chip">Company_Name</span> on board. As your dedicated Customer Success Manager, I'll be guiding you through the implementation of our CSP platform.<br/><br/>
+                                    To get started, I've prepared a brief checklist for your team to review before our kickoff call on <span class="variable-chip">Kickoff_Date</span>.<br/><br/>
+                                    You can access your personalized dashboard here: <span class="variable-chip">Dashboard_URL</span><br/><br/>
+                                    Best regards,<br/>
+<span class="variable-chip">Sender_Name</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Variables/Quick Actions Side -->
+<div class="w-72 bg-surface-container-low border-l border-surface-container-high p-6">
+<h4 class="text-xs font-bold uppercase tracking-widest text-on-surface mb-4">Available Variables</h4>
+<div class="space-y-2">
+<div class="flex items-center gap-2 p-2 bg-white rounded border border-surface-container-high cursor-pointer hover:border-primary transition-all group">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="add_circle">add_circle</span>
+<span class="text-xs font-medium">First_Name</span>
+</div>
+<div class="flex items-center gap-2 p-2 bg-white rounded border border-surface-container-high cursor-pointer hover:border-primary transition-all group">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="add_circle">add_circle</span>
+<span class="text-xs font-medium">Last_Name</span>
+</div>
+<div class="flex items-center gap-2 p-2 bg-white rounded border border-surface-container-high cursor-pointer hover:border-primary transition-all group">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="add_circle">add_circle</span>
+<span class="text-xs font-medium">Company_Name</span>
+</div>
+<div class="flex items-center gap-2 p-2 bg-white rounded border border-surface-container-high cursor-pointer hover:border-primary transition-all group">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="add_circle">add_circle</span>
+<span class="text-xs font-medium">Kickoff_Date</span>
+</div>
+<div class="flex items-center gap-2 p-2 bg-white rounded border border-surface-container-high cursor-pointer hover:border-primary transition-all group">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="add_circle">add_circle</span>
+<span class="text-xs font-medium">Dashboard_URL</span>
+</div>
+</div>
+<div class="mt-10">
+<h4 class="text-xs font-bold uppercase tracking-widest text-on-surface mb-4">Aura AI Assistance</h4>
+<div class="p-4 bg-gradient-to-br from-primary/10 to-primary-container/10 rounded-xl border border-primary/10 text-[11px] text-on-surface-variant leading-tight italic">
+                                "This template has a 78% average open rate. Try personalizing the subject line with a meeting time for +12% increase."
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

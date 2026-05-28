@@ -1,0 +1,20 @@
+{
+  "name": "zluri-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Zluri CSM platform — lets CSM Claude instances read and write to the web app",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "node --loader ts-node/esm src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.15.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5"
+  }
+}

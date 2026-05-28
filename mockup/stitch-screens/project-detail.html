@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#410005",
+                        "secondary-fixed-dim": "#75de57",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#ebe7e7",
+                        "on-background": "#1c1b1b",
+                        "secondary-fixed": "#90fb70",
+                        "on-primary-container": "#f7f6ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#003baf",
+                        "outline": "#737687",
+                        "on-secondary-fixed": "#032100",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-container": "#f0edec",
+                        "surface-bright": "#fcf9f8",
+                        "on-tertiary-fixed-variant": "#930016",
+                        "on-error": "#ffffff",
+                        "primary": "#004bd8",
+                        "primary-container": "#2f65f6",
+                        "background": "#fcf9f8",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container": "#f0edec",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary": "#af1a25",
+                        "surface-variant": "#e5e2e1",
+                        "secondary": "#176e00",
+                        "outline-variant": "#c3c5d8",
+                        "inverse-surface": "#313030",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00164e",
+                        "secondary-container": "#8df86d",
+                        "primary-fixed": "#dce1ff",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-surface-variant": "#434655",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3af",
+                        "on-tertiary-container": "#fff5f4",
+                        "surface-tint": "#0650e2",
+                        "tertiary-container": "#d2363a",
+                        "on-surface": "#1c1b1b",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-secondary-fixed-variant": "#0f5300",
+                        "on-secondary-container": "#197200"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .glow-dot-success {
+            box-shadow: 0 0 8px 2px rgba(23, 110, 0, 0.2);
+        }
+        .glow-dot-primary {
+            box-shadow: 0 0 8px 2px rgba(0, 75, 216, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- SideNavBar Rail -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-slate-900 dark:bg-black font-inter antialiased text-sm tracking-tight shadow-2xl flex flex-col py-6 z-50">
+<div class="px-6 mb-8">
+<div class="text-xl font-bold text-white tracking-tighter">Zluri CSP</div>
+<div class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Internal Tool</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">supervisor_account</span>
+                Accounts
+            </a>
+<a class="bg-blue-600 text-white rounded-lg mx-2 my-1 flex items-center px-4 py-3 shadow-lg shadow-blue-500/20 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mr-3">assignment</span>
+                Projects
+            </a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">mail</span>
+                Email Templates
+            </a>
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+                Admin
+            </a>
+</nav>
+<div class="mt-auto px-2">
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 transition-colors hover:bg-slate-800/80 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3">help_outline</span>
+                Support
+            </a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-16 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm flex items-center justify-between px-8 w-full font-inter text-sm font-medium">
+<div class="flex items-center space-x-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-highest border-none rounded-lg focus:ring-1 focus:ring-primary/30 w-64 transition-all" placeholder="Search projects..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full p-2 transition-all duration-300 ease-in-out relative">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full p-2 transition-all duration-300 ease-in-out">
+<span class="material-symbols-outlined text-slate-600">settings_input_component</span>
+</button>
+<div class="h-6 w-[1px] bg-slate-200 mx-2"></div>
+<button class="text-primary hover:text-primary-container font-semibold transition-colors">Integration Settings</button>
+<img alt="User" class="w-8 h-8 rounded-full ml-2 border border-slate-200" data-alt="professional corporate headshot of a man with a friendly expression in a modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFZVG_VnoifiZFrZqRLZlCwvLmHn4KsskcuDPvAgAbunMeCknnmDcywfnCO4gVbrspvgdb8XeaUgf8xZ-sTRirS-_CQiz_ULZcs8jNoudY3N2VqvZ53OehU6cOxrKgNrTkSIqi4oAslZPF55lVDlv94_JJG9shJvvtL6u40UqmFXhc10wKkuy7xPGaRAjuXXhVhmmMb6_9mXdabwCccCl5Lr_lLTNBsm_E5_L7Ox0MQmeR5uqkxsevAp9wVLFRV0iM9lUlMUm7zAk"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<!-- Entity Header (Glass Header) -->
+<section class="glass-header sticky top-16 z-30 px-10 py-8 border-b border-outline-variant/10">
+<div class="flex justify-between items-start">
+<div>
+<nav class="flex items-center space-x-2 text-on-surface-variant text-xs mb-2 tracking-tight">
+<a class="hover:text-primary transition-colors" href="#">Projects</a>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span>PRJ-4029</span>
+</nav>
+<h1 class="text-3xl font-extrabold tracking-tighter text-on-surface flex items-center gap-3">
+                        Enterprise SaaS Consolidation
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary-container text-on-secondary-container glow-dot-success">Active</span>
+</h1>
+<div class="mt-4 flex items-center space-x-8">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Account</p>
+<a class="text-sm font-semibold text-primary flex items-center gap-1 hover:underline" href="#">
+<span class="material-symbols-outlined text-sm">corporate_fare</span>
+                                Global Logistics Inc.
+                            </a>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Health Score</p>
+<p class="text-sm font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                94/100
+                            </p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Renewal Date</p>
+<p class="text-sm font-semibold">Oct 24, 2024</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-high text-on-surface px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-surface-dim transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">share</span>
+                        Share with client
+                    </button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">description</span>
+                        Generate Document
+                    </button>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="px-10 py-12 max-w-6xl">
+<div class="flex items-center justify-between mb-10">
+<h2 class="text-xl font-bold tracking-tight">Project Roadmap &amp; Phases</h2>
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+<button class="px-4 py-1.5 text-xs font-semibold bg-surface-container-lowest rounded shadow-sm">Timeline View</button>
+<button class="px-4 py-1.5 text-xs font-semibold text-on-surface-variant hover:text-on-surface">List View</button>
+</div>
+</div>
+<div class="relative">
+<!-- Vertical Line -->
+<div class="absolute left-[19px] top-4 bottom-4 w-0.5 bg-surface-container-highest"></div>
+<!-- Phase 1: Completed -->
+<div class="relative pl-14 mb-12 group">
+<div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center z-10 glow-dot-success">
+<span class="material-symbols-outlined">check</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-transparent hover:border-outline-variant/20">
+<div class="flex justify-between items-center mb-4 cursor-pointer">
+<div>
+<h3 class="font-bold text-lg">Phase 1: Discovery &amp; Audit</h3>
+<p class="text-xs text-on-surface-variant">Completed on Aug 12, 2023 • 14 Milestones</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">expand_more</span>
+</div>
+<!-- Milestones Expanded -->
+<div class="mt-6 space-y-4">
+<div class="grid grid-cols-12 items-center text-[11px] font-bold uppercase tracking-widest text-on-surface-variant border-b border-surface-container pb-2 px-2">
+<div class="col-span-5">Milestone</div>
+<div class="col-span-2">Status</div>
+<div class="col-span-2">Owner</div>
+<div class="col-span-2">Due Date</div>
+<div class="col-span-1 text-right">Tasks</div>
+</div>
+<div class="grid grid-cols-12 items-center py-3 px-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="col-span-5 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm">radio_button_checked</span>
+<span class="font-semibold text-sm">Shadow IT Assessment</span>
+</div>
+<div class="col-span-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-secondary-container/30 text-secondary">DONE</span>
+</div>
+<div class="col-span-2 flex items-center gap-2">
+<img alt="Owner" class="w-5 h-5 rounded-full" data-alt="headshot of a young male professional in a blue shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgt928PSEtizbQXzGetTFjiUR1Elsv8RBV_uPetrdRv_bZNosuUnLlqHEaysgzwjY0JxBXv8BK9fIK_4w69SXZ-XNI83ZBEF6GfC1xMeKP46WrizvosIINkq2MUN20SQoKqQzyWOjpHn-r8juFmLpZoq9vt_1JK8JK4yjmCb8EQJb6etCFO_kBpTEJ1FGptwBzW0v-ROA5Jest_BwmN6k_u88iBDoLQgef7hayIAfOY-zi1eBfI-DrZwdVH5TrWE1xdulqmX8ukSI"/>
+<span class="text-xs">Marcus R.</span>
+</div>
+<div class="col-span-2 text-xs">Aug 05, 2023</div>
+<div class="col-span-1 text-right text-xs font-bold text-primary">12/12</div>
+</div>
+<div class="grid grid-cols-12 items-center py-3 px-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="col-span-5 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm">radio_button_checked</span>
+<span class="font-semibold text-sm">Financial Data Syncing</span>
+</div>
+<div class="col-span-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-secondary-container/30 text-secondary">DONE</span>
+</div>
+<div class="col-span-2 flex items-center gap-2">
+<img alt="Owner" class="w-5 h-5 rounded-full" data-alt="headshot of a female executive with glasses and dark hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBTaesIECmXrrdBPVxuV9CP1XLTyKIYROangUgewIcDERHlvSW-cLcUfvByAM8qD8UNNt6ur3eueksXlGnkHbUF8q2aRYlHApLiayZMvJP0bdHcjhuyWFBXKHeb28shtxc5xV3duenkCw6wwS-fboeVep0596Lf-5iIns4NrxUvmFMwK8_sh9jOVFWUx21Dv1JiRa-84HhWMb2rKDhbahr1MIAjvaFLPYjElj4B1sSiyPWmNG-YF5Gzm-W0xeNEmuuXEwgkCxLuM8"/>
+<span class="text-xs">Sarah K.</span>
+</div>
+<div class="col-span-2 text-xs">Aug 10, 2023</div>
+<div class="col-span-1 text-right text-xs font-bold text-primary">8/8</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Phase 2: In Progress -->
+<div class="relative pl-14 mb-12 group">
+<div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10 glow-dot-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-lg ring-1 ring-primary/10">
+<div class="flex justify-between items-center mb-4">
+<div>
+<div class="flex items-center gap-3">
+<h3 class="font-bold text-lg">Phase 2: Rationalization</h3>
+<span class="px-2 py-0.5 rounded text-[9px] font-black bg-primary-fixed text-on-primary-fixed">64% COMPLETE</span>
+</div>
+<p class="text-xs text-on-surface-variant">Expected completion: Sep 15, 2023 • 22 Milestones</p>
+</div>
+<span class="material-symbols-outlined text-primary">expand_less</span>
+</div>
+<!-- Milestones Expanded -->
+<div class="mt-6 space-y-4">
+<div class="grid grid-cols-12 items-center text-[11px] font-bold uppercase tracking-widest text-on-surface-variant border-b border-surface-container pb-2 px-2">
+<div class="col-span-5">Milestone</div>
+<div class="col-span-2">Status</div>
+<div class="col-span-2">Owner</div>
+<div class="col-span-2">Due Date</div>
+<div class="col-span-1 text-right">Tasks</div>
+</div>
+<div class="grid grid-cols-12 items-center py-3 px-2 rounded-lg bg-surface-container-low/50 border border-primary/20">
+<div class="col-span-5 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+<span class="font-semibold text-sm">License Usage Mapping</span>
+</div>
+<div class="col-span-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary-container text-on-primary-container">IN PROGRESS</span>
+</div>
+<div class="col-span-2 flex items-center gap-2">
+<img alt="Owner" class="w-5 h-5 rounded-full" data-alt="professional male portrait with short hair and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM8opDoUnmgW0BzCduF4z_dQXbi4S3YmqlKpyREXP_xAckQyvqeok4LHEHV8SUufcID1cmzv0AkeQgxt6mJOnVRT0yrgXWyxGPTW1bz1XqAO_SDZq5-EoFFJCd-Tkr5nmgdbb15Hc2rXeLVTQ2X-HYO5wfwp7vjiSp4fCn_EOmaPe5Ihrym1uXuLhXn3b2JchsrznnEojHx59DKy4C6yduKO1kg8VcCE8mpCi6MsUji_dX320OV5Sg6OV8_DmZ9yE4xSPISYyRx_k"/>
+<span class="text-xs">David L.</span>
+</div>
+<div class="col-span-2 text-xs font-semibold text-primary">Sep 04, 2023</div>
+<div class="col-span-1 text-right text-xs font-bold text-primary">4/12</div>
+</div>
+<div class="grid grid-cols-12 items-center py-3 px-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="col-span-5 flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-sm">radio_button_unchecked</span>
+<span class="font-semibold text-sm">Contract Renewal Strategy</span>
+</div>
+<div class="col-span-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-surface-container-highest text-on-surface-variant">PENDING</span>
+</div>
+<div class="col-span-2 flex items-center gap-2">
+<img alt="Owner" class="w-5 h-5 rounded-full" data-alt="smiling woman with glasses in a professional studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApt0s1NckWpgcWdLfbx_swu1iTJvWmSiz26moHcPVgrYjks09wrxcI8ATL_hx4js0x7kk8bi95dseyzjFwKL0C44QwRgP2S_dtbnHrrl7ayyLl8P5HgNPV-3WxfpNnhudLiD4Elb3oxpOKrnwJDHVdP1vAS9B4e9PRKKfKYCwHtrUwVSsTzzgziFhy_RSNrKepMaMrhNtIH-_rhHlc9lPib1fZOgjNc0wcFpsvFdFZiHSG7lLT01s6ijuMSec4xfwlLfYMGOkxCCs"/>
+<span class="text-xs">Elena M.</span>
+</div>
+<div class="col-span-2 text-xs">Sep 10, 2023</div>
+<div class="col-span-1 text-right text-xs font-bold text-on-surface-variant">0/5</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Phase 3: Future -->
+<div class="relative pl-14 group">
+<div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center z-10">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<div class="bg-surface-container-lowest/50 p-6 rounded-xl border border-dashed border-outline-variant opacity-60 grayscale hover:grayscale-0 transition-all cursor-not-allowed">
+<div class="flex justify-between items-center">
+<div>
+<h3 class="font-bold text-lg">Phase 3: Automated Procurement</h3>
+<p class="text-xs text-on-surface-variant">Upcoming • Starts Sep 20, 2023</p>
+</div>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Modal (Generate Document) - Static Layout -->
+<div class="fixed inset-0 z-[60] flex items-center justify-center p-6 hidden"> <!-- Toggle hidden to show -->
+<div class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"></div>
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-xl shadow-2xl relative overflow-hidden">
+<div class="p-6 border-b border-surface-container">
+<div class="flex justify-between items-center">
+<h2 class="text-lg font-bold tracking-tight">Generate Project Report</h2>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<div class="p-8 space-y-6">
+<div>
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Report Template</label>
+<select class="w-full bg-surface-container-highest border-none rounded-lg text-sm py-3 focus:ring-primary/20">
+<option>Executive Project Summary</option>
+<option>Technical Audit Detail</option>
+<option>Phase 2: Rationalization Progress</option>
+</select>
+</div>
+<div>
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Report Scope</label>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-low p-4 rounded-lg border border-primary/20 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-xs font-semibold">Include All Phases</span>
+</div>
+<div class="bg-surface p-4 rounded-lg border border-outline-variant/20 flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">radio_button_unchecked</span>
+<span class="text-xs font-semibold">Current Phase Only</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant bg-surface-container-low p-3 rounded-lg">
+<span class="material-symbols-outlined text-sm">info</span>
+                    This document will be automatically synced to the client portal.
+                </div>
+</div>
+<div class="p-6 bg-surface-container-low flex justify-end gap-3">
+<button class="px-6 py-2.5 text-sm font-bold text-on-surface-variant">Cancel</button>
+<button class="bg-primary text-white px-8 py-2.5 rounded-lg text-sm font-bold shadow-lg shadow-primary/20">Generate PDF</button>
+</div>
+</div>
+</div>
+</body></html>

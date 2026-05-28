@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zluri CSP — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    :root {
+      --blue: #3951df;
+      --blue-light: #eef0fd;
+      --red: #FF5757;
+      --red-light: #fff0f0;
+      --dark: #1c1c1f;
+      --gray-bg: #F5F5F5;
+      --gray-100: #f0f0f2;
+      --gray-200: #e4e4e8;
+      --gray-400: #9898a6;
+      --gray-600: #5a5a6b;
+      --white: #ffffff;
+      --sidebar-width: 232px;
+      --green: #12b76a;
+      --green-light: #ecfdf3;
+      --amber: #f79009;
+      --amber-light: #fffaeb;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--gray-bg);
+      color: var(--dark);
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* ─── SIDEBAR ─────────────────────────────────────────── */
+    .sidebar {
+      width: var(--sidebar-width);
+      min-height: 100vh;
+      background: var(--dark);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+
+    .sidebar-logo {
+      padding: 24px 20px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+      background: var(--blue);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .logo-text span:first-child {
+      font-size: 13px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.3px;
+    }
+
+    .logo-text span:last-child {
+      font-size: 10px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.4);
+      margin-top: 2px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .sidebar-nav {
+      padding: 16px 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-section-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 12px 8px 6px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .nav-item:hover {
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.85);
+    }
+
+    .nav-item.active {
+      background: rgba(57, 81, 223, 0.18);
+      color: #7b8ff5;
+    }
+
+    .nav-item.active .nav-icon {
+      color: var(--blue);
+    }
+
+    .nav-icon {
+      width: 16px;
+      height: 16px;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    .nav-item.active .nav-icon {
+      opacity: 1;
+    }
+
+    .nav-badge {
+      margin-left: auto;
+      background: var(--red);
+      color: white;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 100px;
+      min-width: 18px;
+      text-align: center;
+    }
+
+    .sidebar-bottom {
+      padding: 12px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .user-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .user-pill:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 100px;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .user-info span:first-child {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .user-info span:last-child {
+      display: block;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ─── MAIN CONTENT ────────────────────────────────────── */
+    .main {
+      margin-left: var(--sidebar-width);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ─── TOPBAR ──────────────────────────────────────────── */
+    .topbar {
+      height: 60px;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar-left h1 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .topbar-left p {
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-top: 1px;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: all 0.2s;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2d2d32;
+    }
+
+    .btn-secondary {
+      background: var(--gray-100);
+      color: var(--dark);
+    }
+
+    .btn-secondary:hover {
+      background: var(--gray-200);
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-blue:hover {
+      background: #2f44c8;
+    }
+
+    /* ─── PAGE CONTENT ────────────────────────────────────── */
+    .page {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* ─── PORTFOLIO SUMMARY STRIP ─────────────────────────── */
+    .summary-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .summary-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .summary-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .summary-value {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+
+    .summary-value.blue { color: var(--blue); }
+    .summary-value.red { color: var(--red); }
+    .summary-value.green { color: var(--green); }
+
+    .summary-sub {
+      font-size: 11.5px;
+      color: var(--gray-400);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .trend-up {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .trend-down {
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    /* ─── TWO-COLUMN GRID ─────────────────────────────────── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .grid-2-3 {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 20px;
+    }
+
+    /* ─── CARDS ───────────────────────────────────────────── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px 14px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-count {
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--gray-100);
+      color: var(--gray-600);
+      padding: 2px 8px;
+      border-radius: 100px;
+    }
+
+    .card-count.red {
+      background: var(--red-light);
+      color: var(--red);
+    }
+
+    .card-action {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--blue);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* ─── TASK LIST ───────────────────────────────────────── */
+    .task-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 13px 22px;
+      border-bottom: 1px solid var(--gray-100);
+      transition: background 0.1s;
+      cursor: pointer;
+    }
+
+    .task-item:last-child {
+      border-bottom: none;
+    }
+
+    .task-item:hover {
+      background: var(--gray-bg);
+    }
+
+    .task-check {
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .task-check:hover {
+      border-color: var(--blue);
+    }
+
+    .task-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .task-title {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--dark);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .task-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 3px;
+    }
+
+    .task-account {
+      font-size: 12px;
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    .task-due {
+      font-size: 11.5px;
+      color: var(--gray-400);
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .overdue-tag {
+      font-size: 10.5px;
+      font-weight: 600;
+      background: var(--red-light);
+      color: var(--red);
+      padding: 2px 7px;
+      border-radius: 100px;
+    }
+
+    .due-soon-tag {
+      font-size: 10.5px;
+      font-weight: 600;
+      background: var(--amber-light);
+      color: var(--amber);
+      padding: 2px 7px;
+      border-radius: 100px;
+    }
+
+    /* ─── RENEWALS LIST ───────────────────────────────────── */
+    .renewal-section-label {
+      padding: 8px 22px 4px;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      background: var(--gray-bg);
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .renewal-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 22px;
+      border-bottom: 1px solid var(--gray-100);
+      gap: 12px;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+
+    .renewal-item:hover {
+      background: var(--gray-bg);
+    }
+
+    .renewal-item:last-child {
+      border-bottom: none;
+    }
+
+    .renewal-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .renewal-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .renewal-name {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .renewal-date {
+      font-size: 11.5px;
+      color: var(--gray-400);
+      margin-top: 2px;
+    }
+
+    .renewal-arr {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .renewal-days {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 100px;
+    }
+
+    .days-30 {
+      background: var(--red-light);
+      color: var(--red);
+    }
+
+    .days-60 {
+      background: var(--amber-light);
+      color: var(--amber);
+    }
+
+    .days-90 {
+      background: var(--blue-light);
+      color: var(--blue);
+    }
+
+    /* ─── HIGH RISK LIST ──────────────────────────────────── */
+    .risk-item {
+      display: flex;
+      align-items: center;
+      padding: 13px 22px;
+      border-bottom: 1px solid var(--gray-100);
+      gap: 12px;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+
+    .risk-item:hover {
+      background: var(--gray-bg);
+    }
+
+    .risk-item:last-child {
+      border-bottom: none;
+    }
+
+    .risk-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .risk-name {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .risk-csm {
+      font-size: 11.5px;
+      color: var(--gray-400);
+      margin-top: 2px;
+    }
+
+    .risk-signals {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-top: 5px;
+    }
+
+    .signal-tag {
+      font-size: 10.5px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 100px;
+      background: var(--gray-100);
+      color: var(--gray-600);
+      border: 1px solid var(--gray-200);
+    }
+
+    .signal-tag.red {
+      background: var(--red-light);
+      color: var(--red);
+      border-color: #ffcece;
+    }
+
+    .health-score {
+      font-size: 13px;
+      font-weight: 700;
+      width: 36px;
+      height: 36px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .health-low {
+      background: var(--red-light);
+      color: var(--red);
+    }
+
+    .health-mid {
+      background: var(--amber-light);
+      color: var(--amber);
+    }
+
+    .health-high {
+      background: var(--green-light);
+      color: var(--green);
+    }
+
+    /* ─── AI NUDGE BANNER ─────────────────────────────────── */
+    .ai-banner {
+      background: linear-gradient(135deg, #eef0fd 0%, #f5f0ff 100%);
+      border: 1px solid #c7cdf7;
+      border-radius: 14px;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .ai-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--blue);
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 16px;
+    }
+
+    .ai-text h4 {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .ai-text p {
+      font-size: 12.5px;
+      color: var(--gray-600);
+      margin-top: 2px;
+    }
+
+    .ai-actions {
+      margin-left: auto;
+      display: flex;
+      gap: 8px;
+    }
+
+    /* ─── SECTION DIVIDER ─────────────────────────────────── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    /* SVG icons inline */
+    svg { display: inline-block; }
+  </style>
+</head>
+<body>
+
+  <!-- ─── SIDEBAR ─────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-mark">Z</div>
+      <div class="logo-text">
+        <span>Zluri CSP</span>
+        <span>Customer Success</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+
+      <a class="nav-item active">
+        <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+        Dashboard
+        <span class="nav-badge">5</span>
+      </a>
+
+      <a class="nav-item">
+        <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+        </svg>
+        Accounts
+      </a>
+
+      <a class="nav-item">
+        <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+        </svg>
+        Projects
+      </a>
+
+      <a class="nav-item">
+        <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        Email Templates
+      </a>
+
+      <div class="nav-section-label">Admin</div>
+
+      <a class="nav-item">
+        <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197"/>
+        </svg>
+        Users
+      </a>
+
+      <a class="nav-item">
+        <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/>
+        </svg>
+        Settings
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="user-pill">
+        <div class="avatar">SI</div>
+        <div class="user-info">
+          <span>Shrikant Iyer</span>
+          <span>CS Operations</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ─── MAIN ───────────────────────────────────────────── -->
+  <main class="main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1>Good morning, Shrikant 👋</h1>
+        <p>Thursday, 26 March 2026 · 5 items need your attention</p>
+      </div>
+      <div class="topbar-right">
+        <button class="btn btn-secondary">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+          Add Account
+        </button>
+        <button class="btn btn-primary">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+          Import CSV
+        </button>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page">
+
+      <!-- AI Nudge Banner -->
+      <div class="ai-banner">
+        <div class="ai-icon">✦</div>
+        <div class="ai-text">
+          <h4>3 new AI suggestions from yesterday's meetings</h4>
+          <p>Granola synced 4 notes · 3 proposed tasks and 1 risk signal are waiting for your review</p>
+        </div>
+        <div class="ai-actions">
+          <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;">Dismiss</button>
+          <button class="btn btn-blue" style="padding: 8px 16px; font-size: 12px;">Review Suggestions</button>
+        </div>
+      </div>
+
+      <!-- Portfolio Summary Strip -->
+      <div class="summary-strip">
+        <div class="summary-card">
+          <div class="summary-label">Total ARR</div>
+          <div class="summary-value blue">$4.2M</div>
+          <div class="summary-sub"><span class="trend-up">↑ 12%</span> vs last quarter</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-label">Accounts</div>
+          <div class="summary-value">37</div>
+          <div class="summary-sub">28 healthy · <span style="color: var(--red)">9 at risk</span></div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-label">Renewals (90 days)</div>
+          <div class="summary-value red">$820K</div>
+          <div class="summary-sub">6 accounts · 2 high risk</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-label">Avg Health Score</div>
+          <div class="summary-value green">72</div>
+          <div class="summary-sub"><span class="trend-up">↑ 4pts</span> this month</div>
+        </div>
+      </div>
+
+      <!-- Row 1: Tasks + Renewals -->
+      <div class="grid-2-3">
+
+        <!-- My Tasks -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">
+              My Tasks
+              <span class="card-count red">8 overdue</span>
+            </div>
+            <a class="card-action">View all</a>
+          </div>
+          <div class="task-list">
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div class="task-body">
+                <div class="task-title">Send QBR prep deck to Acme Corp</div>
+                <div class="task-meta">
+                  <span class="task-account">Acme Corp</span>
+                  <span class="overdue-tag">3 days overdue</span>
+                </div>
+              </div>
+            </div>
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div class="task-body">
+                <div class="task-title">Follow up on SSO configuration blockers</div>
+                <div class="task-meta">
+                  <span class="task-account">Meridian Health</span>
+                  <span class="overdue-tag">1 day overdue</span>
+                </div>
+              </div>
+            </div>
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div class="task-body">
+                <div class="task-title">Share onboarding checklist with IT Admin</div>
+                <div class="task-meta">
+                  <span class="task-account">TechFlow Inc</span>
+                  <span class="due-soon-tag">Due today</span>
+                </div>
+              </div>
+            </div>
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div class="task-body">
+                <div class="task-title">Schedule executive business review for Q2</div>
+                <div class="task-meta">
+                  <span class="task-account">Vertex Systems</span>
+                  <span class="task-due">Due Mar 29</span>
+                </div>
+              </div>
+            </div>
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div class="task-body">
+                <div class="task-title">Review expansion proposal with AE</div>
+                <div class="task-meta">
+                  <span class="task-account">BlueSky Logistics</span>
+                  <span class="task-due">Due Apr 1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Renewals -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">
+              Upcoming Renewals
+              <span class="card-count">6 accounts</span>
+            </div>
+            <a class="card-action">View all</a>
+          </div>
+
+          <div class="renewal-section-label">Within 30 days</div>
+          <div class="renewal-item">
+            <div class="renewal-dot" style="background: var(--red)"></div>
+            <div class="renewal-body">
+              <div class="renewal-name">Acme Corp</div>
+              <div class="renewal-date">Renews Apr 14, 2026</div>
+            </div>
+            <div class="renewal-arr">$180K</div>
+            <div class="renewal-days days-30">19 days</div>
+          </div>
+          <div class="renewal-item">
+            <div class="renewal-dot" style="background: var(--red)"></div>
+            <div class="renewal-body">
+              <div class="renewal-name">Meridian Health</div>
+              <div class="renewal-date">Renews Apr 22, 2026</div>
+            </div>
+            <div class="renewal-arr">$95K</div>
+            <div class="renewal-days days-30">27 days</div>
+          </div>
+
+          <div class="renewal-section-label">31–60 days</div>
+          <div class="renewal-item">
+            <div class="renewal-dot" style="background: var(--amber)"></div>
+            <div class="renewal-body">
+              <div class="renewal-name">Vertex Systems</div>
+              <div class="renewal-date">Renews May 8, 2026</div>
+            </div>
+            <div class="renewal-arr">$240K</div>
+            <div class="renewal-days days-60">43 days</div>
+          </div>
+
+          <div class="renewal-section-label">61–90 days</div>
+          <div class="renewal-item">
+            <div class="renewal-dot" style="background: var(--blue)"></div>
+            <div class="renewal-body">
+              <div class="renewal-name">BlueSky Logistics</div>
+              <div class="renewal-date">Renews Jun 2, 2026</div>
+            </div>
+            <div class="renewal-arr">$310K</div>
+            <div class="renewal-days days-90">68 days</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Row 2: High Risk Accounts + No-Meeting Accounts -->
+      <div class="grid-2">
+
+        <!-- High Risk Accounts -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">
+              High Risk Accounts
+              <span class="card-count red">4 accounts</span>
+            </div>
+            <a class="card-action">View all</a>
+          </div>
+          <div>
+            <div class="risk-item">
+              <div class="health-score health-low">28</div>
+              <div class="risk-body">
+                <div class="risk-name">Acme Corp</div>
+                <div class="risk-csm">CSM: Priya Nair · $180K ARR</div>
+                <div class="risk-signals">
+                  <span class="signal-tag red">Exec disengaged</span>
+                  <span class="signal-tag red">Competitor eval</span>
+                </div>
+              </div>
+            </div>
+            <div class="risk-item">
+              <div class="health-score health-low">34</div>
+              <div class="risk-body">
+                <div class="risk-name">Meridian Health</div>
+                <div class="risk-csm">CSM: Rohan Mehta · $95K ARR</div>
+                <div class="risk-signals">
+                  <span class="signal-tag red">Budget pressure</span>
+                  <span class="signal-tag">Low adoption</span>
+                </div>
+              </div>
+            </div>
+            <div class="risk-item">
+              <div class="health-score health-mid">41</div>
+              <div class="risk-body">
+                <div class="risk-name">CloudNine Data</div>
+                <div class="risk-csm">CSM: Shrikant Iyer · $72K ARR</div>
+                <div class="risk-signals">
+                  <span class="signal-tag">Slow onboarding</span>
+                </div>
+              </div>
+            </div>
+            <div class="risk-item">
+              <div class="health-score health-low">22</div>
+              <div class="risk-body">
+                <div class="risk-name">Redstone Corp</div>
+                <div class="risk-csm">CSM: Priya Nair · $130K ARR</div>
+                <div class="risk-signals">
+                  <span class="signal-tag red">Non-responsive</span>
+                  <span class="signal-tag red">No meeting 30d</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- No Recent Meeting -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">
+              No Recent Meeting
+              <span class="card-count">5 accounts</span>
+            </div>
+            <a class="card-action">View all</a>
+          </div>
+          <div>
+            <div class="risk-item">
+              <div class="health-score health-mid">55</div>
+              <div class="risk-body">
+                <div class="risk-name">TechFlow Inc</div>
+                <div class="risk-csm">CSM: Shrikant Iyer · $88K ARR</div>
+                <div class="risk-signals">
+                  <span class="signal-tag" style="background:var(--red-light);color:var(--red);border-color:#ffcece;">30 days no meeting</span>
+                </div>
+              </div>
+              <button class="btn btn-secondary" style="padding:6px 14px;font-size:11.5px;flex-shrink:0;">Log Note</button>
+            </div>
+            <div class="risk-item">
+              <div class="health-score health-high">68</div>
+              <div class="risk-body">
+                <div class="risk-name">Pinnacle Retail</div>
+                <div class="risk-csm">CSM: Rohan Mehta · $145K ARR</div>
+                <div class="risk-signals">
+                  <span class="signal-tag" style="background:var(--amber-light);color:var(--amber);border-color:#fde8c8;">21 days no meeting</span>
+                </div>
+              </div>
+              <button class="btn btn-secondary" style="padding:6px 14px;font-size:11.5px;flex-shrink:0;">Log Note</button>
+            </div>
+            <div class="risk-item">
+              <div class="health-score health-high">74</div>
+              <div class="risk-body">
+                <div class="risk-name">Orion Financial</div>
+                <div class="risk-csm">CSM: Shrikant Iyer · $200K ARR</div>
+                <div class="risk-signals">
+                  <span class="signal-tag" style="background:var(--amber-light);color:var(--amber);border-color:#fde8c8;">17 days no meeting</span>
+                </div>
+              </div>
+              <button class="btn btn-secondary" style="padding:6px 14px;font-size:11.5px;flex-shrink:0;">Log Note</button>
+            </div>
+            <div class="risk-item">
+              <div class="health-score health-high">81</div>
+              <div class="risk-body">
+                <div class="risk-name">Nova Pharma</div>
+                <div class="risk-csm">CSM: Priya Nair · $165K ARR</div>
+                <div class="risk-signals">
+                  <span class="signal-tag" style="background:var(--amber-light);color:var(--amber);border-color:#fde8c8;">14 days no meeting</span>
+                </div>
+              </div>
+              <button class="btn btn-secondary" style="padding:6px 14px;font-size:11.5px;flex-shrink:0;">Log Note</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
